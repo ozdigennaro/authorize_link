@@ -1,15 +1,20 @@
 # <% if authorized_action?("platforms", "index") %>
 
 
-def authorize_link(controller, action, link_name, link_path)
-<<-HTML
+def authorize_link(controller, action, link)
 
-<% if authorized_action?(#{controller}, #{action}) %>
-   <li class="<%= 'active' if params[:controller] == #{controller} %>">
-     <%= link_to #{link_name}, #{link_path} %>
+  active = (params[:controller] == controller) ? "class='active'" : ""
+
+  if authorized_action?(controller, action)
+    condition =
+<<-ERB
+   <li #{active} >
+     #{link}
      <span class="sr-only">(current)</span>
    </li>
-<% end %>
-
-HTML
+ERB
+    condition.html_safe
+  else
+    ""
+  end
 end
