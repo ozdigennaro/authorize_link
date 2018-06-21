@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This is a rails view helper.  It makes it easy to create a link that is conditional on a call to authorize_action(controller, action).  If true the string returned is HTML with a link to link_path with text link_name
+
+authorize_link(controller, action, link_name, link_path).
+
+Depends on your implementation of authorize_action()
 
 ## Development
 
