@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    authorize_link (0.1.0)
+    authorize_link (1.0.10)
 
 GEM
   remote: https://rubygems.org/
@@ -29,7 +29,7 @@ DEPENDENCIES
   authorize_link!
   bundler (~> 1.16)
   rake (~> 10.0)
-  rspec
+  rspec (= 3.7)
 
 BUNDLED WITH
    1.16.2

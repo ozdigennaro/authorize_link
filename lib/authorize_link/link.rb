@@ -3,12 +3,12 @@
 
 def authorize_link(controller, action, link)
 
-  active = (params[:controller] == controller) ? "class='active'" : ""
+  active = (params[:controller] == controller) ? " class='active' " : ""
 
   if authorized_action?(controller, action)
     condition =
 <<-ERB
-   <li #{active} >
+   <li#{active}>
      #{link}
      <span class="sr-only">(current)</span>
    </li>
